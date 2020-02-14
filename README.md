@@ -4,8 +4,7 @@ le fichier "creer_EC2.py" lance une nouvelle instance aws /!\ à ne lancer qu'un
 
 Le fichier "mainBigData.py" est le fichier principal sur la machine client
 il s'appelle avec "python mainBigData.py <PATHNAME>" avec <PATHNAME> l'emplacement du fichier a traiter.
-Il sera créé un fichier au meme endroit que <PATHNALE> suivi de "Complet".
-Par exemple "python mainBigData.py ../dataset/predict.csv" créera un fichier "predictComplet.csv" dans le dossier "dataset".
+Le programme met ensuite les données traitées dans MongoDB avec une collection par classe.
 
 Le fichier "bigDataProject.pem" est la clée utilisée par "mainBigData.py" pour se connecter a aws.
 
