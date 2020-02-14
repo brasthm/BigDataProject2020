@@ -18,6 +18,16 @@ else:
     
 file_out = os.path.splitext(file_in)[0] + "Complet"+ os.path.splitext(file_in)[1]
 
+def import_csvfile(filepath):
+ mng_client = pymongo.MongoClient('localhost', 27017)
+ mng_db = mng_client['Big_Data'] # Replace mongo db name
+ collection_name = 'Insurance' # Replace mongo db collection name
+ db_cm = mng_db[collection_name]
+
+ data = pd.read_csv(filepath, error_bad_lines=False)
+ data_json = json.loads(data.to_json(orient='records'))
+ db_cm.remove()
+ db_cm.insert(data_json)
 
 # on fait la connection SSH avec la machine AWS
 ssh = SSHClient()
@@ -41,7 +51,8 @@ if (file_in != file_out):
     ssh.exec_command("rm files/" + os.path.basename(file_in))
 ftp.close()
 ssh.close()
-
+import_csvfile(file_out)
+os.remove(file_out)
 
 
 
