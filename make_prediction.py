@@ -8,13 +8,6 @@ from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import pickle
-import sys
-
-#file_in = sys.argv[1]
-#file_out = sys.argv[2]
-
-file_in = sys.argv[1]
-file_out = sys.argv[2]
 
 columns_of_train = ['Product_Info_1', 'Product_Info_2', 'Product_Info_4', 'Product_Info_6',
        'Product_Info_7', 'Ins_Age', 'Ht', 'Wt', 'BMI', 'Employment_Info_1',
@@ -42,7 +35,7 @@ columns_of_train = ['Product_Info_1', 'Product_Info_2', 'Product_Info_4', 'Produ
        'Medical_Keyword_34', 'Medical_Keyword_37', 'Medical_Keyword_39',
        'Medical_Keyword_40', 'Medical_Keyword_42', 'Medical_Keyword_45',
        'Medical_Keyword_47']
-DATA_test = file_in
+DATA_test = "predict.csv"
 df_test = pd.read_csv(DATA_test, na_values='NAN')
 dataframe_test = pd.DataFrame(df_test)
 df_test = df_test[columns_of_train] 
@@ -64,5 +57,5 @@ X_scaled_real = scaler_standard.transform(df_test)
 loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
 result = loaded_model.predict(X_scaled_real)
 df_test["Response"] = result
-df_test.to_csv(file_out)
+df_test.to_csv(r'prediction_new.csv')
 
