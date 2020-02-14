@@ -4,17 +4,19 @@ import argparse
 import os
 import sys
 import time
+import pandas as pd
+import pymongo
+import json
 
 
 #file_in = "make_prediction.py"
 file_in = "predict.csv"
 if (len(sys.argv)==1):
-    file_in = "predict.csv"
+    file_in = "../dataset/predict.csv"
 else:
     file_in = sys.argv[1]
     
 file_out = os.path.splitext(file_in)[0] + "Complet"+ os.path.splitext(file_in)[1]
-
 
 
 # on fait la connection SSH avec la machine AWS
