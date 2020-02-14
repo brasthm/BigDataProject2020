@@ -13,7 +13,7 @@ if (len(sys.argv)==1):
 else:
     file_in = sys.argv[1]
     
-file_out = os.path.splitext(file_in)[0] + "Complete"+ os.path.splitext(file_in)[1]
+file_out = os.path.splitext(file_in)[0] + "Complet"+ os.path.splitext(file_in)[1]
 
 
 
