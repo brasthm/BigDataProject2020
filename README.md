@@ -11,3 +11,7 @@ Le fichier "bigDataProject.pem" est la clée utilisée par "mainBigData.py" pour
 Le fichier "make_prediction.py" est le fichier principal sur le serveur pour classifier les utilisateurs.
 
 Le fichier "finalized_model2.sav" est le fichier sur le serveur qui contient le model d'apprentissage. Il est appelé par "make_prediction.py" pour faire les prédictions
+
+Le fichier "Model de aprentissage" est le fichier avec le pre-traitement de données et le modéle de aprentissage choisi.
+
+Le fichier "make_prediction.py" est le fichier qui prédit les étiquettes dans le fichier Predict.csv à partir du modèle choisi dans le fichier .ipynb. 
