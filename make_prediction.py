@@ -8,6 +8,10 @@ from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import pickle
+import sys
+
+#file_in = sys.argv[1]
+#file_out = sys.argv[2]
 
 file_in = sys.argv[1]
 file_out = sys.argv[2]
